@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login Page</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #e0e0e0; margin: 0; }
+.login-container { background-color: #e0e0e0; padding: 2.5rem; border-radius: 20px; box-shadow: 10px 10px 20px #bebebe, -10px -10px 20px #ffffff; width: 320px; text-align: center; }
+.logo { width: 150px; height: 150px; margin-bottom: 1.5rem; border-radius: 50%; object-fit: cover; box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff; border: 5px solid #e0e0e0; }
+.input-group { margin-bottom: 1.25rem; position: relative; display: flex; align-items: center; }
+.input-group i { position: absolute; left: 15px; color: #777; font-size: 1.1rem; pointer-events: none; transition: color 0.3s; }
+input { width: 100%; padding: 0.85rem 0.85rem 0.85rem 45px; border: none; border-radius: 10px; font-size: 1rem; box-sizing: border-box; background-color: #e0e0e0; box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff; transition: box-shadow 0.3s, background-color 0.3s; }
+input:focus { outline: none; background-color: #e8e8e8; box-shadow: inset 2px 2px 5px #bebebe, inset -2px -2px 5px #ffffff, 0 0 10px rgba(50, 168, 82, 0.7); }
+input:focus + i { color: #288c41; font-weight: bold; }
+.options { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; font-size: 0.9rem; color: #555; }
+.options label { display: flex; align-items: center; cursor: pointer; }
+.options input { width: auto; margin-right: 7px; cursor: pointer; box-shadow: none; }
+button { width: 100%; padding: 0.85rem; background-color: #32a852; color: white; border: none; border-radius: 10px; font-size: 1.1rem; cursor: pointer; transition: background-color 0.3s, transform 0.2s; font-weight: bold; box-shadow: 5px 5px 10px #bebebe, -5px -5px 10px #ffffff; }
+button:hover { background-color: #288c41; transform: translateY(-1px); }
+button:active { transform: translateY(1px); box-shadow: 2px 2px 5px #bebebe, -2px -2px 5px #ffffff; }
+a { color: #32a852; text-decoration: none; font-weight: bold; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="login-container">
+<img src="C:/Users/Hp/Downloads/images.jpg" alt="DiwaPAY Logo" class="logo">
+<form>
+<div class="input-group">
+<i class="fas fa-phone"></i>
+<input type="text" id="mobile" name="mobile" placeholder="Phone Number" maxlength="10">
+</div>
+<div class="input-group">
+<i class="fas fa-lock"></i>
+<input type="password" id="password" name="password" placeholder="Password" maxlength="6">
+</div>
+<div class="input-group">
+<i class="fas fa-key"></i>
+<input type="password" id="pin" name="pin" placeholder="6-digit PIN" maxlength="6">
+</div>
+<div class="options">
+<a href="#">Register</a>
+<label><input type="checkbox"> Remember Me</label>
+</div>
+<div class="options" style="justify-content: center; margin-bottom: 1.5rem;">
+<label style="font-size: 0.8rem;"><input type="checkbox"> Agree <a href="#" style="margin-left: 3px;">User Privacy Agreement</a></label>
+</div>
+<button type="submit">Sign In</button>
+</form>
+</div>
+</body>
+</html>

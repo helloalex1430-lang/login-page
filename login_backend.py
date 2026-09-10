@@ -5,7 +5,7 @@ import os
 app = Flask(__name__, template_folder='.')
 
 # Path to the database file
-database_file = "users_database.txt"
+DB_FILE_PATH = "users_database.txt'
 app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')

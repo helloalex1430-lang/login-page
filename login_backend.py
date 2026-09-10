@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import datetime
 import os
 
@@ -6,7 +6,9 @@ app = Flask(__name__)
 
 # Path to the database file
 DB_FILE_PATH = r"C:\Users\Hp\OneDrive\Documents\Desktop\hello\users_database.txt"
-
+app.route('/', methods=['GET'])
+def index():
+    return render_template('index.html')
 @app.route('/login', methods=['POST'])
 def login():
     data = request.json

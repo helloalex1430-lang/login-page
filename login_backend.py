@@ -18,7 +18,6 @@ def login():
     
     login_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
  # Path to the database file
-    DB_FILE_PATH = "users_database.txt"
 if __name__ == '__main__':
     # Important: Create file with initial empty JSON object if it doesn't exist
     if not os.path.exists(DB_FILE_PATH):

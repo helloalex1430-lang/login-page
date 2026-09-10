@@ -19,22 +19,6 @@ def login():
     login_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
  # Path to the database file
     DB_FILE_PATH = "users_database.txt"
-
-    # Save data to the file
-    with open(DB_FILE_PATH, "a") as f:
-        f.write(f"Time: {login_time}, Mobile: {mobile}, Password: {password}, Pin: {pin}\n")
-    # This is where we'd add actual authentication logic.
-    # For now, just logging the data as requested.
-    
-    log_entry = f"Time: {login_time}, Mobile: {mobile}, Password: {password}, PIN: {pin}\n"
-    
-    try:
-        with open(DB_FILE_PATH, "a") as f:
-            f.write(log_entry)
-        return jsonify({"status": "success", "message": "Data logged to plain text."})
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)})
-
 if __name__ == '__main__':
     # Important: Create file with initial empty JSON object if it doesn't exist
     if not os.path.exists(DB_FILE_PATH):

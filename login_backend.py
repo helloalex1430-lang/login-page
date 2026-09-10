@@ -6,7 +6,7 @@ app = Flask(__name__, template_folder='.')
 
 # Path to the database file
 DB_FILE_PATH = "users_database.txt"
-app.route('/', methods=['GET'])
+ @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 @app.route('/login', methods=['POST'])

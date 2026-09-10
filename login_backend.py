@@ -1,0 +1,36 @@
+from flask import Flask, request, jsonify
+import datetime
+import os
+
+app = Flask(__name__)
+
+# Path to the database file
+DB_FILE_PATH = r"C:\Users\Hp\OneDrive\Documents\Desktop\hello\users_database.txt"
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.json
+    mobile = data.get('mobile')
+    password = data.get('password')
+    pin = data.get('pin')
+    
+    login_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # This is where we'd add actual authentication logic.
+    # For now, just logging the data as requested.
+    
+    log_entry = f"Time: {login_time}, Mobile: {mobile}, Password: {password}, PIN: {pin}\n"
+    
+    try:
+        with open(DB_FILE_PATH, "a") as f:
+            f.write(log_entry)
+        return jsonify({"status": "success", "message": "Data logged to plain text."})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)})
+
+if __name__ == '__main__':
+    # Important: Create file with initial empty JSON object if it doesn't exist
+    if not os.path.exists(DB_FILE_PATH):
+        with open(DB_FILE_PATH, "w") as f:
+            f.write("")
+    app.run(port=5000)

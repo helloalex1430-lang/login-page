@@ -33,4 +33,5 @@ if __name__ == '__main__':
     if not os.path.exists(DB_FILE_PATH):
         with open(DB_FILE_PATH, "w") as f:
             f.write("")
-    app.run(port=5000)
+    port = os.environ.get('PORT', 5000)
+    app.run(host='0.0.0.0', port=port)

@@ -51,30 +51,27 @@ a:hover { text-decoration: underline; }
 
 <script>
 document.getElementById('loginForm').addEventListener('submit', function(event) {
-event.preventDefault();
-
-const mobile = document.getElementById('mobile').value;
-const password = document.getElementById('password').value;
-const pin = document.getElementById('pin').value;
-
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(0;
+    event.preventDefault();
 
     const mobile = document.getElementById('mobile').value;
     const password = document.getElementById('password').value;
     const pin = document.getElementById('pin').value;
 
-    fetch('http://127.0.0.1:5000/login', {
+    fetch('/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ mobile, password, pin })
+        body: JSON.stringify({
+            mobile: mobile,
+            password: password,
+            pin: pin
+        })
     })
-    .then(response => response.json(00
+    .then(response => response.json())
     .then(data => {
         if (data.status === 'success') {
-            alert('Login data logged successfully!');
+            alert('Login successful!');
         } else {
             alert('Error: ' + data.message);
         }
@@ -84,6 +81,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert('Could not connect to the backend.');
     });
 });
+</script>
 
 </body>
 </html>

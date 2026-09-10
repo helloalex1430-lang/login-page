@@ -57,27 +57,33 @@ const mobile = document.getElementById('mobile').value;
 const password = document.getElementById('password').value;
 const pin = document.getElementById('pin').value;
 
-fetch('http://127.0.0.1:5000/login', {
-method: 'POST',
-headers: {
-'Content-Type': 'application/json'
-},
-body: JSON.stringify({ mobile, password, pin })
-})
-.then(response => response.json())
-.then(data => {
-if (data.status === 'success') {
-alert('Login data logged successfully!');
-} else {
-alert('Error: ' + data.message);
-}
-})
-.catch(error => {
-console.error('Error:', error);
-alert('Could not connect to the backend.');
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(0;
+
+    const mobile = document.getElementById('mobile').value;
+    const password = document.getElementById('password').value;
+    const pin = document.getElementById('pin').value;
+
+    fetch('http://127.0.0.1:5000/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ mobile, password, pin })
+    })
+    .then(response => response.json(00
+    .then(data => {
+        if (data.status === 'success') {
+            alert('Login data logged successfully!');
+        } else {
+            alert('Error: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Could not connect to the backend.');
+    });
 });
-});
-</script>
 
 </body>
 </html>

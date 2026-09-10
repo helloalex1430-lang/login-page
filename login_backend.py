@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import datetime
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')
 
 # Path to the database file
 DB_FILE_PATH = r"C:\Users\Hp\OneDrive\Documents\Desktop\hello\users_database.txt"
